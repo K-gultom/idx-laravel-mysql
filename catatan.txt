@@ -1,0 +1,30 @@
+Install laravel didalam idx project
+
+
+#url untuk setting mysql 
+https://nixos.wiki/wiki/Mysql
+
+sisipkan 
+Setup
+Setup and enable Mysql (MariaDB) database daemon :
+
+services.mysql = {
+  enable = true;
+  package = pkgs.mariadb;
+};
+
+masukkan configurasi diatas kedalam folder .idx/dev.nix
+
+================================================================
+
+setting .env 
+ganti database connection menjadi seperti berikut 
+  
+  DB_CONNECTION=mysql
+  DB_HOST=127.0.0.1
+  DB_PORT=3306
+  DB_DATABASE=laravel_idx_mysql
+  DB_USERNAME=root
+  DB_PASSWORD=
+
+kemudian instal package di extention mysql dengan publisher cweijan
